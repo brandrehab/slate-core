@@ -1,0 +1,27 @@
+{
+    "name": "brandrehab/slate-core",
+    "description": "The Slate CMS built on Laravel Lumen.",
+    "keywords": ["cms", "laravel", "lumen", "slate"],
+    "license": "MIT",
+    "homepage": "https://brand.rehab/slate",
+    "support": {
+        "issues": "https://github.com/brandrehab/slate-core/issues",
+        "source": "https://github.com/brandrehab/slate-core"
+    },
+    "authors": [
+        {
+            "name": "Wayne Ashley",
+            "email": "wayne@brand.rehab"
+        }
+    ],
+    "require": {
+        "php": "^7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slate\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
