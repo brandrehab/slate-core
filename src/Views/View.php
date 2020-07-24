@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Slate\Views;
 
-use App\Factories\BlockFactory;
+use Slate\Factories\BlockFactoryInterface;
 use Twig\Environment;
 use Twig\TemplateWrapper;
 
@@ -30,7 +30,7 @@ abstract class View
     /**
      * Class constructor.
      */
-    public function __construct(Environment $twig, BlockFactory $block)
+    public function __construct(Environment $twig, BlockFactoryInterface $block)
     {
         $this->wrapper = $twig->load(static::TEMPLATE);
         $this->block = $block;

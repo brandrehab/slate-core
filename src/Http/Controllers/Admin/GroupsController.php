@@ -1,24 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Slate\Http\Controllers\Admin;
 
-use Slate\Entities\Group;
-use Slate\Http\Controllers\Controller;
+use Slate\Managers\GroupManager;
 use Illuminate\Http\Response;
 
+/**
+ * Groups controller.
+ */
 class GroupsController extends Controller
 {
-    /**
-     * @todo currently broken due to the inclusion of App\Views.
-     */
-    public function show()
+    public function show(): Response
     {
-        $groups = Group::all();
-
-        $template = $this->twig->load('admin.html.twig');
-
-        return new Response($template->render([
-            'groups' => $this->block->create('adminGroups', ['groups' => $groups]),
-        ]));
+        $view = $this->view->create('groups');
+        return $view->render(GroupManager::all());
     }
 }

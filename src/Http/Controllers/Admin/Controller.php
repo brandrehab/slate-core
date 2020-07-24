@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Slate\Http\Controllers;
+namespace Slate\Http\Controllers\Admin;
 
-use App\Factories\ViewFactory;
+use Slate\Factories\AdminViewFactory;
 use Laravel\Lumen\Routing\Controller as BaseController;
 
 /**
@@ -13,16 +13,16 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 abstract class Controller extends BaseController
 {
     /**
-     * Admin view factory.
+     * View factory.
      *
-     * @var \Slate\Factories\ViewFactory
+     * @var \Slate\Factories\AdminViewFactory
      */
     protected $view;
 
     /**
      * Class constructor.
      */
-    public function __construct(ViewFactory $view)
+    public function __construct(AdminViewFactory $view)
     {
         $this->view = $view;
     }

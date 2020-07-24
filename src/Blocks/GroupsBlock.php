@@ -2,12 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Slate\Blocks\Admin;
-
-use Slate\Blocks\Block;
+namespace Slate\Blocks;
 
 /**
- * Admin groups block data.
+ * Groups block data.
  */
 class GroupsBlock extends Block
 {
@@ -18,7 +16,7 @@ class GroupsBlock extends Block
     {
         return [
           'items' => $this->config('groups'),
-          'name' => 'Admin groups block',
+          'name' => 'Groups block',
         ];
     }
 }
