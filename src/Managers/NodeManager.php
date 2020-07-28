@@ -38,7 +38,6 @@ class NodeManager
      */
     public static function all(?string $node_type = null): Collection
     {
-
         $nodeType = $node_type ? NodeType::where(['name' => $node_type])->firstOrFail() : null;
 
         if ($nodeType) {
@@ -46,5 +45,13 @@ class NodeManager
         }
 
         return Node::all();
+    }
+
+    /**
+     * Attempt to retrieve a node by the id.
+     */
+    public static function find(int $id): Node
+    {
+        return Node::findOrFail($id);
     }
 }

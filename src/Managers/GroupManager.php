@@ -13,10 +13,18 @@ use Illuminate\Database\Eloquent\Collection;
 class GroupManager
 {
     /**
-     * Attempt to retrieve all nodes (optionally of a given node type).
+     * Attempt to retrieve all groups.
      */
-    public static function all(?string $node_type = null): Collection
+    public static function all(): Collection
     {
         return Group::all();
+    }
+
+    /**
+     * Attempt to retrieve a group by the id.
+     */
+    public static function find(int $id): Group
+    {
+        return Group::findOrFail($id);
     }
 }

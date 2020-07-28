@@ -25,6 +25,7 @@ class NodesView extends View
     public function render(Collection $nodes): Response
     {
         return new Response($this->wrapper->render([
+            'head' => $this->block->create('head'),
             'nodes' => $this->block->create('nodes', ['nodes' => $nodes]),
         ]));
     }

@@ -17,4 +17,10 @@ class NodesController extends Controller
         $view = $this->view->create('nodes');
         return $view->render(NodeManager::all());
     }
+
+    public function edit(int $id): Response
+    {
+        $view = $this->view->create('node');
+        return $view->render(NodeManager::find($id));
+    }
 }

@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Slate\Views;
 
-use Illuminate\Database\Eloquent\Collection;
+use Slate\Entities\Group;
 use Illuminate\Http\Response;
 
 /**
- * Renders the groups view.
+ * Renders the group view.
  */
-class GroupsView extends View
+class GroupView extends View
 {
     /**
      * Twig template.
@@ -22,11 +22,11 @@ class GroupsView extends View
     /**
      * Render a twig template.
      */
-    public function render(Collection $groups): Response
+    public function render(Group $group): Response
     {
         return new Response($this->wrapper->render([
             'head' => $this->block->create('head'),
-            'groups' => $this->block->create('groups', ['groups' => $groups]),
+            'group' => $this->block->create('group', ['group' => $group]),
         ]));
     }
 }

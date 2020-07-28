@@ -6,7 +6,9 @@ namespace Slate\Factories;
 
 use Slate\Factories\AdminBlockFactory;
 use Slate\Views\NodesView;
+use Slate\Views\NodeView;
 use Slate\Views\GroupsView;
+use Slate\Views\GroupView;
 use Twig\Environment;
 
 /**
@@ -48,7 +50,7 @@ class AdminViewFactory
     }
 
     /**
-     * Home view.
+     * Nodes view.
      */
     private function nodes(): NodesView
     {
@@ -56,10 +58,26 @@ class AdminViewFactory
     }
 
     /**
-     * Section view.
+     * Node view.
+     */
+    private function node(): NodeView
+    {
+        return new NodeView($this->twig, $this->block);
+    }
+
+    /**
+     * Groups view.
      */
     private function groups(): GroupsView
     {
         return new GroupsView($this->twig, $this->block);
+    }
+
+    /**
+     * Group view.
+     */
+    private function group(): GroupView
+    {
+        return new GroupView($this->twig, $this->block);
     }
 }
